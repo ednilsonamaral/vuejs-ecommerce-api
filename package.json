@@ -1,0 +1,34 @@
+{
+  "name": "vuejs-ecommerce-api",
+  "version": "1.0.0",
+  "description": "API desenvolvida para o curso de Vue.js 2 na Prática da Webschool",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "api",
+    "nodejs",
+    "node",
+    "mongodb",
+    "mongo",
+    "mongoose",
+    "vuejs",
+    "vue",
+    "webschool",
+    "cursos",
+    "hapijs",
+    "hapi",
+    "jwt",
+    "jsonwebtoken"
+  ],
+  "author": "Ednilson Amaral <http://ednilsonamaral.me>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "hapi": "^16.4.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.10.5"
+  }
+}
