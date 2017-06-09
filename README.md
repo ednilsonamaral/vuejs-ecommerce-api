@@ -1,5 +1,10 @@
 # API desenvolvida para o curso de Vue.js 2 na Prática da Webschool
 
+## URI
+
+[https://vuejs-ecommerce-api.herokuapp.com/api/v1](https://vuejs-ecommerce-api.herokuapp.com)
+
+
 ## Product
 
 - GET: `/api/v1/products`  
