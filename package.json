@@ -4,7 +4,8 @@
   "description": "API desenvolvida para o curso de Vue.js 2 na Prática da Webschool",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "nodemon app.js"
   },
   "keywords": [
     "api",
@@ -30,6 +31,7 @@
     "hapi": "^16.4.2",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "mongoose": "^4.10.5"
+    "mongoose": "^4.10.5",
+    "nodemon": "^1.11.0"
   }
 }
