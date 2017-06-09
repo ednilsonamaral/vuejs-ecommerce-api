@@ -1,5 +1,5 @@
 const CONSTANTS = require('../helpers/constants')
-const URI = `${CONSTANTS.URI}/product`
+const URI = `${CONSTANTS.URI}/products`
 const ProductModel = require(`../models/Product`)
 
 const Moment = require('moment')
