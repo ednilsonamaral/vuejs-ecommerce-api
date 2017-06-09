@@ -1,6 +1,7 @@
 const Mongoose = require('mongoose')
 
-const dbName = 'mongodb://localhost/webschool-vuejs-ecommerce-api'
+// const dbName = 'mongodb://localhost/webschool-vuejs-ecommerce-api'
+const dbName = 'mongodb://ednilson:ednilson123@ds119302.mlab.com:19302/webschool-vuejs-ecommerce-api'
 
 Mongoose.connect(dbName)
 Mongoose.Promise = global.Promise
