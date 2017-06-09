@@ -4,8 +4,8 @@ const db = require('./config/db')
 const Constants = require('./helpers/constants')
 
 server.connection({
-	host: 'localhost',
-	port: 4000
+	host: process.env.HOST || 'localhost',
+	port: process.env.PORT || 4000
 })
 
 server.route({
