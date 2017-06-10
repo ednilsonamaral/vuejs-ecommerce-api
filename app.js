@@ -21,8 +21,10 @@ server.route({
 })
 
 const ProductRoutes = require('./routes/product')
+const CategorieRoutes = require('./routes/categorie')
 
 server.route(ProductRoutes)
+server.route(CategorieRoutes)
 
 server.start((err) => {
 	if (err) {

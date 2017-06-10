@@ -1,17 +1,17 @@
 const CONSTANTS = require('../helpers/constants')
-const URI = `${CONSTANTS.URI}/products`
-const ProductModel = require(`../models/Product`)
+const URI = `${CONSTANTS.URI}/categories`
+const CategorieModel = require(`../models/Categorie`)
 
 const Moment = require('moment')
 const getCurrentDateWithoutTimezone = Moment().format('YYYY-MM-DDTHH:mm:ss')
 
 module.exports = [
-	// Get all products
+	// Get all categories
 	{
 		method: 'GET',
 		path: URI,
 		handler: (req, reply) => {
-			ProductModel.find((error, data) => {
+			CategorieModel.find((error, data) => {
 				if (error) {
 					reply({
 						error: true,
@@ -31,12 +31,12 @@ module.exports = [
 		}
 	},
 
-	// Get product by id
+	// Get categorie by id
 	{
 		method: 'GET',
 		path: URI + `/{id}`,
 		handler: (req, reply) => {
-			ProductModel.findById(req.params.id, (error, data) => {
+			CategorieModel.findById(req.params.id, (error, data) => {
 				if (error) {
 					reply({
 						error: true,
@@ -56,26 +56,23 @@ module.exports = [
 		}
 	},
 
-	// Create a new product
+	// Create a new categorie
 	{
 		method: 'POST',
 		path: URI,
 		handler: (request, reply) => {
-			const product = new ProductModel({
+			const categorie = new CategorieModel({
 					name: request.payload.name
-				, id_categorie: request.payload.id_categorie
-				, price: request.payload.price
-				, qtd: request.payload.qtd
 				, status: request.payload.status
 				, created_at: getCurrentDateWithoutTimezone
 			})
 
-			product.save((error, data) => {
+			categorie.save((error, data) => {
 				if (error) {
 					if (error.index == 0) {
 						reply({
 							error: true,
-							data: 'Já existe um produto registrado com esse nome!',
+							data: 'Já existe uma categoria registrada com esse nome!',
 							statusCode: 403,
 							statusText: 'NOK',
 						}).code(403)
@@ -83,7 +80,7 @@ module.exports = [
 						reply({
 							error: true,
 							data: error,
-							statusCode: 200,
+							statusCode: 401,
 							statusText: 'NOK',
 						})
 					}
@@ -91,7 +88,7 @@ module.exports = [
 					reply({
 						error: false,
 						data: data,
-						message: 'Novo produto cadastrado com sucesso!',
+						message: 'Nova categoria cadastrada com sucesso!',
 						statusCode: 201,
 						statusText: 'OK'
 					}).code(201)
@@ -100,23 +97,20 @@ module.exports = [
 		}
 	},
 
-	// Update a product by id
+	// Update a categorie by id
 	{
 		method: 'PUT',
 		path: URI + `/{id}`,
 		handler: (request, reply) => {
 			const _id = { _id: request.params.id }
 
-			const product = {
+			const categorie = {
 					name: request.payload.name
-				, id_categorie: request.payload.id_categorie
-				, price: request.payload.price
-				, qtd: request.payload.qtd
 				, status: request.payload.status
 				, updated_at: getCurrentDateWithoutTimezone
 			}
 
-			ProductModel.update(_id, product, { multi: false }, (error, data) => {
+			CategorieModel.update(_id, categorie, { multi: false }, (error, data) => {
 				if (error) {
 					reply({
 						error: true,
@@ -128,7 +122,7 @@ module.exports = [
 					reply({
 						error: false,
 						data: data,
-						message: 'Produto editado com sucesso!',
+						message: 'Categoria editada com sucesso!',
 						statusCode: 204,
 						statusText: 'OK'
 					}).code(204)
@@ -137,14 +131,14 @@ module.exports = [
 		}
 	},
 
-	// Delete a product by id
+	// Delete a categorie by id
 	{
 		method: 'DELETE',
 		path: URI + `/{id}`,
 		handler: (request, reply) => {
 			const _id = { _id: request.params.id }
 
-			ProductModel.remove(_id, (error, data) => {
+			CategorieModel.remove(_id, (error, data) => {
 				if (error) {
 					reply({
 						error: true,
@@ -156,7 +150,7 @@ module.exports = [
 					reply({
 						error: false,
 						data: data,
-						message: 'Produto deletado com sucesso!',
+						message: 'Categoria deletada com sucesso!',
 						statusCode: 200,
 						statusText: 'OK'
 					}).code(200)
