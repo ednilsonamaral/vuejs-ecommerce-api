@@ -26,6 +26,19 @@
 ```
 
 
+### Exemplo de Envio
+
+```js  
+{
+	"name": "Nome da categoria",
+	"status" 1
+}
+```
+
+
+#### Os campos `created_at` e `updated_at` são preenchidos automaticamente pela API.
+
+
 ## Product
 
 - GET: `/api/v1/products`  
@@ -48,3 +61,19 @@
 	, updated_at: Date
 }
 ```
+
+
+### Exemplo de Envio
+
+```js  
+{
+	"name": "Nome do produto",
+	"id_categorie": "pega o id da categoria e cola aqui",
+	"price": 10.99,
+	"qtd": 10,
+	"status" 1
+}
+```
+
+
+#### Os campos `created_at` e `updated_at` são preenchidos automaticamente pela API.
