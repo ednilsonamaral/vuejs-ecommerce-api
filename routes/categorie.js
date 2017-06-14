@@ -123,9 +123,9 @@ module.exports = [
 						error: false,
 						data: data,
 						message: 'Categoria editada com sucesso!',
-						statusCode: 204,
+						statusCode: 200,
 						statusText: 'OK'
-					}).code(204)
+					}).code(200)
 				}
 			})
 		}
